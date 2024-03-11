@@ -11,5 +11,6 @@ app.use(express.json());
 // Mount the router
 app.use('/', router);
 
+
 const port = 8080;
 app.listen(port, () => console.log(`Server listening on port ${port}`));
