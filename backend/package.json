@@ -7,8 +7,7 @@
     "scripts": {
         "dev": "nodemon index.js",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build":  "babel . -d dist"
-
+        "build": "babel . -d dist"
     },
     "author": "",
     "license": "ISC",
