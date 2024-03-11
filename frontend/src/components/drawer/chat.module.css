@@ -1,0 +1,174 @@
+.wrapper{
+    width: 355px;
+    background-color:var(--eerie-black-3);
+    display: flex;
+    flex-direction: column;
+    gap:0;
+}
+.chatContainer{
+    height: 100lvh;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    box-sizing:border-box;
+    padding: 0.5rem;
+    position: relative;
+}
+.flower{
+    position: absolute;
+    width: 0.5rem;
+}
+.flower > img {
+    width: 10rem;
+    opacity: 0.09;
+    animation: rotateAnimation 70s infinite linear; /* Apply animation */
+}
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg); /* Start rotation from 0 degrees */
+    }
+    to {
+        transform: rotate(360deg); /* Rotate 360 degrees */
+    }
+}
+
+
+.header{
+    /* background-color:green; */
+    height: 10lv;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fontFamily-forum);
+
+    font-size: 48px;
+    color:white;
+    padding: 1rem;
+}
+.playground{
+    /* background-color:green; */
+    height: 100lvh;
+    border-radius:0.5rem;
+    position: relative;
+    padding: 0.5rem;
+
+    display: flex;
+    gap:0.4rem;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: clip;
+
+    padding-bottom: 5rem;
+}
+.inputWrapper{
+    position: absolute;
+    bottom: 2rem;
+    width: 80%;
+    align-self: center;
+    /* background-color: aqua; */
+    display: flex;
+    gap:1rem;
+    align-items: center;
+    justify-content:center;
+
+
+}
+.inputWrapper > SendIcon{
+    color: rgb(150, 150, 150) ;
+}
+.sendButton{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+
+    /* background-color:red; */
+    height: 100%;
+    height: 2rem;
+    border:1px solid rgb(150, 150, 150);
+
+    border-radius:0.4rem;
+    /* box-sizing:border-box; */
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+
+}
+.inputWrapper > input{
+    border:none;
+    background-color:var(--eerie-black-3);
+    height: 2rem;
+    width: 100%;
+
+    border:1px solid rgb(150, 150, 150);
+
+    border-radius:0.4rem;
+    color:white; 
+    padding-left: 0.5rem;
+    font-size: 0.9rem;
+
+}
+.botWrapper{
+    border:1px solid rgb(83, 83, 83);
+    background-color:rgb(49, 50, 51);
+    
+    display: flex;
+    max-width: 90%;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    /* min-height:12rem; */
+    border-radius:0.4rem;
+    padding:0.3rem;
+    box-shadow: 1px 1px 10px 1px rgb(64, 65, 65);
+
+
+}
+.userWrapper{
+    border:1px solid rgb(83, 83, 83);
+    
+    align-self:flex-end;
+    background-color:rgb(32, 28, 31);
+
+    display: flex;
+    max-width: 90%;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    /* min-height:12rem; */
+    border-radius:0.4rem;
+    padding:0.3rem;
+    box-shadow: 1px 1px 10px 1px rgb(64, 65, 65);
+    overflow: auto;
+    min-height: 1rem;
+
+}
+
+
+/* HTML: <div class="loader"></div> */
+.hiddenLoad{
+    display: none;
+}
+.loader {
+    width: 10px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgb(150, 150, 150);;
+    display: grid;
+    animation: l22-0 2s infinite linear;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    grid-area: 1/1;
+    margin: 15%;
+    border-radius: 50%;
+    background: inherit;
+    transform: rotate(0deg) translate(150%);
+    animation: l22 1s infinite;
+  }
+  .loader:after {
+    animation-delay: -.5s
+  }
+  @keyframes l22-0 {
+    100% {transform: rotate(1turn)}
+  }
+  @keyframes l22 {
+    100% {transform: rotate(1turn) translate(150%)}
+  }

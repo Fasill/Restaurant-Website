@@ -1,0 +1,359 @@
+@import url('../../index.css');
+.all{
+
+    position: absolute;
+    display: grid;
+    
+    position: fixed;
+    transition: transform 500ms;
+
+}
+
+.toolbar{
+    width: 100vw;
+    background-color:transparent;
+    /* border-bottom: 0.1px solid white; */
+    box-shadow: 0 0 1px white;
+    align-items:center;
+    box-sizing: border-box;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+    color:white;
+    font-family: sans-serif; /* Use a generic sans-serif font */
+    font-size: 14px;
+    transform: translateY(0%);
+    /* transition: transform ; */
+    transition: transform 500ms;
+
+}
+
+.hidden{
+    transform: translateY(-36%);
+    /* display: none; */
+    transition: transform 500ms;
+    
+    background-color:var(--black-alpha-15);
+}
+
+.scrolling{
+    transform: translateY(-100%);
+    transition: transform 500ms;
+    background-color:var(--black-alpha-15);
+}
+
+address {
+    text-decoration: none; /* Remove underlining */
+    font-style: normal; /* Ensure normal font style */
+}
+
+.container{
+    display:flex;
+    justify-items: center;
+    justify-content: space-between;
+    align-items:center;
+    
+}
+.left_toolbar,.right_toolbar{
+    display: flex;
+    justify-content: space-between;
+    gap:2rem;
+    align-items:center;
+}
+
+@media screen and (max-width: 1050px) {
+    .left_toolbar{
+        display: none;
+    }
+
+    .container{
+        justify-content: center;
+    }
+
+}
+@media screen and (max-width: 430px) {
+    .toolbar{
+        display: none;
+    }
+    .hidden{
+        transform: translateY(0%);
+        /* display: none; */
+        transition: transform 500ms;
+        
+        background-color:var(--black-alpha-15);
+    }
+
+   
+}
+.devider{
+    height:8px;
+    width: 8px;
+    border-radius:1px;
+    background-color:transparent;
+    border:1.9px solid var(--gold);
+    transform:rotate(45deg)
+}
+address,.items_2,.item_3,.item_4{
+    display: flex;
+    /* justify-items: center; */
+    align-items:center;
+    height: 50px;
+    /* background-color:#fff ; */
+    gap:0.4rem;
+}
+.item_3:hover,.item_4:hover{
+ 
+    color:var(--gold);
+    cursor:pointer;
+    transition: color 250ms;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color:transparent;
+    width:100%;
+
+    max-width:100%;
+    box-sizing: border-box;
+    padding: 0.9rem;
+    transition: transform 1s;
+    align-items:center;
+
+
+}
+nav{
+    width: 100vw;
+    max-width:60vw;
+    flex-shrink: 0
+
+}
+.logo{
+    width: 100vw;
+    max-width:30vw;
+    
+    flex:1;
+
+}
+@media screen and (max-width: 556px) {
+
+    nav{
+        width: 100vw;
+        max-width:40vw;
+        flex-shrink: 0
+
+    }
+    .logo{
+        width: 100vw;
+        max-width:50vw;
+        
+        flex:1;
+    
+    }
+ 
+   
+    
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height:2rem;
+    position: relative;
+    width:50vw;
+    max-width: 50vw;
+
+
+
+} 
+nav ul li{
+text-decoration: none;
+list-style-type: none;
+transition: color 500ms;
+font-family: var(--fontFamily-dm_sans);
+font-size: 12px;
+font-weight: 700;
+letter-spacing: 1px;
+
+ 
+}
+.runner{
+    position: absolute;
+    bottom: -8px;
+    left: 71px;
+    background-color:transparent;
+    border-top:0.17rem solid var(--gold);
+    border-bottom:0.17rem solid var(--gold);
+
+    height: 0.2rem;
+    width: 2.5rem;
+    transition-property: left, width; /* Specify the properties to animate */
+    transition-duration: 0.5s, 0.5s;
+}
+nav ul li:nth-child(n+3):nth-child(-n+6) {
+    color: var(--white);
+}
+
+nav ul li:nth-child(2){
+    color:var(--gold);
+    cursor: pointer;
+}
+nav ul li:nth-child(3):hover{
+    color:var(--gold);
+    cursor: pointer;
+
+}
+nav ul li:nth-child(4):hover{
+    color:var(--gold);
+    cursor: pointer;
+
+}nav ul li:nth-child(5):hover{
+    color:var(--gold);
+    cursor: pointer;
+
+}
+nav ul li:nth-child(6):hover{
+    color:var(--gold);
+    cursor: pointer;
+
+}
+nav ul li:nth-child(3):hover~.runner {
+    left:142px;
+    width: 2.8rem;
+
+}
+nav ul li:nth-child(4):hover~.runner {
+    left:220px;
+    width: 4.1rem;
+
+}
+nav ul li:nth-child(5):hover~.runner {
+    left:317px;
+    width: 4.5rem;
+}
+nav ul li:nth-child(6):hover~.runner {
+    left:420px;
+    width: 3.8rem;
+
+}
+
+@media screen and (max-width: 1115px) {
+    .navElements{
+        display: none;
+    }
+    nav {
+        display: flex;
+        }
+    .btn {
+        align-self: center;
+        justify-self: center;
+    }
+    .runner{
+        display: none;
+    }
+}
+
+.btn{
+    overflow: clip;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+    width: 208px;
+    height: 58px;
+
+    background-color:var(--gold-crayola);
+    position: relative;
+    border:2px solid var(--gold-crayola);
+    letter-spacing: 3px;
+
+}
+@media screen and (max-width: 556px) {
+    .btn{
+        display: none;
+    }
+    
+}
+
+.btn:hover>p{
+    z-index: 1;
+    transform: translateY(-100%);
+    transform: translateY(0%);
+    transition: 0.5s;
+
+    color:var(--gold-crayola);
+}
+
+
+.btn::before {
+    content: "";
+    display: flex; /* Apply flex properties to the parent */
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    color: white;
+    left: 0;
+    top:0;
+    background-color: black;
+    width: 100%;
+    height: 0%;
+    border-bottom-left-radius:100% ;
+    border-bottom-right-radius:100% ;
+    transition: 0.2s;
+
+}
+
+.btn:hover::before { /* Correct the hover selector */
+    height: 100%;
+
+    border-bottom-left-radius:0% ;
+    border-bottom-right-radius:0% ;
+
+
+}
+
+.wraper{
+    display: flex;
+    justify-items: space-between;
+    align-items:center;
+    height: 100%;
+    gap:2rem;
+
+}
+
+@media screen and (max-width: 1115px) {
+    .humberger{
+        display: grid;
+        height: 70%;
+        width: 30px;
+        cursor:Pointer;
+
+    }
+}
+
+.line1,.line2,.line3{
+    background-color:var(--white);
+    height: 3px;
+    width: 100%;
+    /* border-radius:1rem; */
+
+    animation: lineAnimation 0.35s infinite alternate;
+}
+.line1{
+}   
+.line2{
+    animation-delay: 150ms;
+    
+    }
+.line3{
+    animation-delay: 300ms;
+    
+    }
+
+@keyframes lineAnimation {
+    100% {
+        width: 40%; /* Adjust this value as needed */
+    }
+    0% {
+        width: 100%;
+    }
+}

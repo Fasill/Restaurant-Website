@@ -1,0 +1,58 @@
+.layout{
+    position: relative;
+    overflow-x: clip;
+}
+
+
+body::-webkit-scrollbar{
+    width: 4px;
+}
+body::-webkit-scrollbar-thumb{
+    background-color:var(--gold-crayola);
+    border-radius: 10px;
+
+}
+body::-webkit-scrollbar-track{
+    background-color:var(--eerie-black-3);
+
+}
+.chatBot{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    /* background-color: var(--gold-crayola); */
+    position: fixed;
+    margin: 5rem;
+    height:4rem;
+    width: 4rem;
+    border:1px solid var(--gold-crayola);
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius:100%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    
+    
+}
+.MarkUnreadChatAltIcon{
+    color:var(--gold-crayola);
+    transition: color 0.2s;
+    
+}
+.chatBot:hover{
+    background-color:var(--gold-crayola);
+}
+.chatBot:hover>.MarkUnreadChatAltIcon{
+    color:black;
+}
+.shake{
+    
+    animation: shake 0.3s infinite;
+}
+@keyframes shake {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+    100% { transform: translateY(0); }
+  }
