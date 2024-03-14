@@ -3,7 +3,6 @@ import axios from 'axios';
 const OPENAI_API_KEY = "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";
 
 let conversationHistory = [];
-
 const responses = Object.values({
     "amenities": "Grilli Restaurant offers various amenities, including cozy seating for 100 guests, a diverse menu featuring local and international cuisine, a refreshing swimming pool, rejuvenating spa services, and complimentary Wi-Fi access.",
     "contact address": "Grilli Restaurant is located at  8487 bole Street, Addis Ababa, Ethiopia. You can reach us at +251-940-798-785 or via email at info@grillirestaurant.com.",

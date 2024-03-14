@@ -9,7 +9,7 @@ import SendIcon from '@mui/icons-material/Send';
 import goldenFlower from '../../assets/images/goldenFlower.png';
 import CloseIcon from '@mui/icons-material/Close';
 
-import { Backedlink } from '../../utils/Backendlink.jsx';
+import { backendlink1,backendlink2 } from '../../utils/Backendlink.jsx';
 
 export default function RightDrawer() {
   const [userMessage, setUserMessage] = useState('');
@@ -41,7 +41,7 @@ export default function RightDrawer() {
         setIsLoading(true);
   
         try {
-          const response = await axios.post(Backedlink, { prompt: "give me a 1 line greeting as a grilli resturant chat bot and your name is chefbot note: make it short and if they askyou your name answer grillis restoerant chefbot and dont ever say 'I apologize for the lengthy response earlier. Here's a concise greeting:'" });
+          const response = await axios.post(`${backendlink2}/chat`, { prompt: "give me a 1 line greeting as a grilli resturant chat bot and your name is chefbot note: make it short and if they askyou your name answer grillis restoerant chefbot and dont ever say 'I apologize for the lengthy response earlier. Here's a concise greeting:'" });
           const botResponse = response.data.message;
   
           setBotMessages(prevMessages => [...prevMessages, { sender: 'bot', message: botResponse }]);
@@ -72,7 +72,7 @@ export default function RightDrawer() {
 
     // Send user message to the server or API
     try {
-      const response = await axios.post(Backedlink, { "prompt": message });
+      const response = await axios.post(`${backendlink1}/chat`, { "prompt": message });
       console.log(response.message)
       const botResponse = response.data.message;
 
