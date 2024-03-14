@@ -6,6 +6,7 @@
     
     position: fixed;
     transition: transform 500ms;
+    z-index: 9;
 
 }
 
