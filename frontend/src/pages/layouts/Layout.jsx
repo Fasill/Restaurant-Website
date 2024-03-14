@@ -8,6 +8,7 @@ import MarkUnreadChatAltIcon from '@mui/icons-material/MarkUnreadChatAlt';
 import RightDrawer from '../../components/drawer/RightDrawer.jsx';
 import { useDispatch } from 'react-redux';
 import { updateRight } from '../../store/StateStore.jsx';
+import TopNotch from '../ TopNotch/ TopNotch.jsx';
 
 const layout = () => {
 
@@ -42,6 +43,7 @@ useEffect(() => {
         <Toolbar />
       <div className={``}>
         <Outlet/>
+        <TopNotch/>
         {/* <Outlet/> */}
         <Drawer/>
         <RightDrawer/>

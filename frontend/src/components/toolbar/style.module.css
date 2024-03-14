@@ -369,3 +369,6 @@ nav ul li:nth-child(6):hover~.runner {
         width: 100%;
     }
 }
+.scrolled{
+    background-color:#212121;
+}

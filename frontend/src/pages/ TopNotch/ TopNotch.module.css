@@ -1,0 +1,5 @@
+.TopNotchWrapper{
+    background-color:var(--smoky-black-1);
+    height: 100lvh;
+    width: 100lvw;
+}

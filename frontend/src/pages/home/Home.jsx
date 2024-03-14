@@ -5,8 +5,8 @@ import style from './Home.module.css';
 import separator from '../../assets/images/separator.svg';
 import img1 from '../../assets/images/hero-slider-1.jpg';
 import img2 from '../../assets/images/hero-slider-2.jpg';
-import img3 from '../../assets/images/hero-slider-3.jpg'
-
+import img3 from '../../assets/images/hero-slider-3.jpg';
+import badge from '../../assets/images/features-icon-2.png';
 
 const Home = () => {
   const [idx,setIdx] = useState(0);
@@ -14,16 +14,21 @@ const Home = () => {
   
   const handleChangeLeft = () => {
     setIdx((idx - 1 + 3) % 3);
+    updateTimestamp();
   };
   
   const handleChangeRight = () => {
     setIdx((idx + 1) % 3);
+    updateTimestamp();
+  }; 
+  const updateTimestamp = () => {
+    setTimestamp(Date.now());
   };
   
   useEffect(() => {
     const interval = setInterval(() => {
       setIdx((prevIdx) => (prevIdx + 1) % 3);
-
+      updateTimestamp();
     }, 5000);
 
     return () => clearInterval(interval);
@@ -67,9 +72,17 @@ const Home = () => {
             <p  className={`${idx == 2 ? style.title3 : style.hidden}`}>
               Come with family & feel the joy of mouthwatering food
             </p>
+            <div className={idx == 0 ? style.btn: style.hidden}><p>VIEW OUR MENU</p></div>
+            <div className={idx == 1 ? style.btn: style.hidden}><p>VIEW OUR MENU</p></div>
+            <div className={idx == 2 ? style.btn: style.hidden}><p>VIEW OUR MENU</p></div>
+
           </div>
           <div className={style.rightNext} onClick={handleChangeRight}>
             <ArrowForwardIosIcon className={style.rightArrow}/>
+          </div>
+          <div className={style.badge}>
+            <img src={badge} />
+            <p>Book A Table</p>
           </div>
 
       </div>

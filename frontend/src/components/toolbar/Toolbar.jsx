@@ -99,7 +99,7 @@ const Toolbar = () => {
             </div>
         </div>
 
-        <div  className={`${style.navbar} ${showNavbar ?style.scrolled: ""}`}>
+        <div  className={`${style.navbar} ${!showNavbar ?style.scrolled: ""}`}>
           <div className={`${style.logo}`}>
               <img src={logo} alt="" className="img" />
           </div>
