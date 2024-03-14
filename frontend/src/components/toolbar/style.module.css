@@ -188,7 +188,7 @@ letter-spacing: 1px;
 .runner{
     position: absolute;
     bottom: -8px;
-    left: 63px;
+    left: 68px;
     background-color:transparent;
     border-top:0.17rem solid var(--gold);
     border-bottom:0.17rem solid var(--gold);
@@ -226,21 +226,21 @@ nav ul li:nth-child(6):hover{
 
 }
 nav ul li:nth-child(3):hover~.runner {
-    left:126px;
+    left:136px;
     width: 2.8rem;
 
 }
 nav ul li:nth-child(4):hover~.runner {
-    left:198px;
+    left:212px;
     width: 4.3rem;
 
 }
 nav ul li:nth-child(5):hover~.runner {
-    left:290px;
+    left:310px;
     width: 4.9rem;
 }
 nav ul li:nth-child(6):hover~.runner {
-    left:395px;
+    left:417px;
     width: 3.8rem;
 
 }
