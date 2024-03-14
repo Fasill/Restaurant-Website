@@ -116,12 +116,17 @@ address,.items_2,.item_3,.item_4{
     max-width:100%;
     box-sizing: border-box;
     padding: 0.9rem;
+    padding-left:  4rem;
+    padding-right: 4rem;
+
     transition: transform 1s;
     align-items:center;
 
 
 }
 nav{
+    display: flex;
+    justify-content:flex-end;
     width: 100vw;
     max-width:60vw;
     flex-shrink: 0
@@ -135,7 +140,10 @@ nav{
 
 }
 @media screen and (max-width: 556px) {
-
+    .navbar{
+        padding-left:  1rem;
+        padding-right: 4rem;
+    }
     nav{
         width: 100vw;
         max-width:40vw;
@@ -154,6 +162,7 @@ nav{
     
 }
 nav ul{
+    /* background-color:red; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -179,7 +188,7 @@ letter-spacing: 1px;
 .runner{
     position: absolute;
     bottom: -8px;
-    left: 71px;
+    left: 63px;
     background-color:transparent;
     border-top:0.17rem solid var(--gold);
     border-bottom:0.17rem solid var(--gold);
@@ -217,21 +226,21 @@ nav ul li:nth-child(6):hover{
 
 }
 nav ul li:nth-child(3):hover~.runner {
-    left:142px;
+    left:126px;
     width: 2.8rem;
 
 }
 nav ul li:nth-child(4):hover~.runner {
-    left:220px;
-    width: 4.1rem;
+    left:198px;
+    width: 4.3rem;
 
 }
 nav ul li:nth-child(5):hover~.runner {
-    left:317px;
-    width: 4.5rem;
+    left:290px;
+    width: 4.9rem;
 }
 nav ul li:nth-child(6):hover~.runner {
-    left:420px;
+    left:395px;
     width: 3.8rem;
 
 }
@@ -265,7 +274,7 @@ nav ul li:nth-child(6):hover~.runner {
     position: relative;
     border:2px solid var(--gold-crayola);
     letter-spacing: 3px;
-
+    cursor:pointer;
 }
 @media screen and (max-width: 556px) {
     .btn{
@@ -317,9 +326,12 @@ nav ul li:nth-child(6):hover~.runner {
     align-items:center;
     height: 100%;
     gap:2rem;
+    
 
 }
-
+.humberger{
+    display: none;
+}
 @media screen and (max-width: 1115px) {
     .humberger{
         display: grid;
@@ -334,7 +346,6 @@ nav ul li:nth-child(6):hover~.runner {
     background-color:var(--white);
     height: 3px;
     width: 100%;
-    /* border-radius:1rem; */
 
     animation: lineAnimation 0.35s infinite alternate;
 }
@@ -351,7 +362,7 @@ nav ul li:nth-child(6):hover~.runner {
 
 @keyframes lineAnimation {
     100% {
-        width: 40%; /* Adjust this value as needed */
+        width: 40%; 
     }
     0% {
         width: 100%;

@@ -23,7 +23,7 @@ body::-webkit-scrollbar-track{
     z-index: 999;
     /* background-color: var(--gold-crayola); */
     position: fixed;
-    margin: 5rem;
+    margin: 4rem;
     height:4rem;
     width: 4rem;
     border:1px solid var(--gold-crayola);

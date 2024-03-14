@@ -6,10 +6,10 @@ let conversationHistory = [];
 
 const responses = Object.values({
     "amenities": "Grilli Restaurant offers various amenities, including cozy seating for 100 guests, a diverse menu featuring local and international cuisine, a refreshing swimming pool, rejuvenating spa services, and complimentary Wi-Fi access.",
-    "contact address": "Grilli Restaurant is located at  8487 bole Street, Anytown, Ethiopia. You can reach us at +251-940-798-785 or via email at info@grillirestaurant.com.",
+    "contact address": "Grilli Restaurant is located at  8487 bole Street, Addis Ababa, Ethiopia. You can reach us at +251-940-798-785 or via email at info@grillirestaurant.com.",
     "restaurant": "Yes, Grilli Restaurant offers a delightful dining experience with a menu that caters to both local and foreign tastes. Explore our menu filled with a wide range of dishes crafted to tantalize your palate.",
     "room options": "At Grilli Restaurant, we ensure a comfortable dining experience with various seating options, including intimate tables for two, spacious family seating, and private dining areas for special occasions.",
-    "location location": "Grilli Restaurant is conveniently situated at 8487 bole Street, Anytown, Ethiopia. If you need assistance locating us, feel free to contact our staff for directions.",
+    "location location": "Grilli Restaurant is conveniently situated at 8487 bole Street, Addis Ababa, Ethiopia. If you need assistance locating us, feel free to contact our staff for directions.",
     "check-in": "Check-in at Grilli Restaurant begins at 3:00 PM. Should you require early seating, please inform us in advance, and we will do our best to accommodate your request.",
     "check-out": "Check-out time at Grilli Restaurant is at 12:00 PM. If you wish to extend your dining experience, please let us know, and we will make the necessary arrangements.",
     "parking": "Grilli Restaurant provides complimentary onsite parking for our guests' convenience. Additionally, valet parking services are available to enhance your dining experience.",
@@ -20,8 +20,8 @@ const responses = Object.values({
     "room service": "Indulge in the convenience of in-room dining at Grilli Restaurant. Our room service menu features an array of delectable options for breakfast, lunch, and dinner, delivered straight to your door.",
     "activities": "Enhance your dining experience at Grilli Restaurant with leisurely activities such as lounging by the pool, enjoying a workout session at the fitness center, or pampering yourself with spa treatments. We also offer guided culinary tours and cooking classes for food enthusiasts.",
     "business facilities": "Grilli Restaurant provides versatile spaces and modern amenities to cater to your business needs. Whether you're hosting a corporate luncheon or a networking event, our dedicated team ensures seamless execution and professional service.",
-    "restaurants nearby": "Explore the culinary diversity of Anytown with numerous dining options within walking distance of Grilli Restaurant. Consult our knowledgeable staff for personalized recommendations based on your preferences.",
-    "local attractions": "Discover the charm of Anytown with its array of local attractions, including museums, parks, shopping districts, and entertainment venues. Let our concierge desk assist you in planning memorable excursions and sightseeing adventures.",
+    "restaurants nearby": "Explore the culinary diversity of Addis Ababa with numerous dining options within walking distance of Grilli Restaurant. Consult our knowledgeable staff for personalized recommendations based on your preferences.",
+    "local attractions": "Discover the charm of Addis Ababa with its array of local attractions, including museums, parks, shopping districts, and entertainment venues. Let our concierge desk assist you in planning memorable excursions and sightseeing adventures.",
     "public transportation": "Accessible via various modes of public transportation, Grilli Restaurant is conveniently located near bus stops and train stations. For assistance with navigating the area, our staff is readily available to provide guidance and information.",
     "medical assistance": "Should you require medical assistance during your visit to Grilli Restaurant, our staff can assist you in locating nearby medical facilities, including hospitals, clinics, and pharmacies. In case of emergencies, dial [Emergency Number] for immediate assistance.",
     "lost and found": "If you have misplaced or found any items while dining at Grilli Restaurant, please notify our staff for prompt assistance. We maintain a meticulous record of lost and found items to ensure their safe return to their rightful owners.",
@@ -49,13 +49,12 @@ const responses = Object.values({
 
 export const chat = (req, res) => {
     const { prompt } = req.body;
+    console.log("got a request")
 
     // Append user prompt to conversation history
     conversationHistory.push({ role: "user", content: prompt });
 
-    const responses = Object.values({
-        // Your responses object remains unchanged
-    }).join(" ");
+
 
     const requestBody = {
         model: "gpt-3.5-turbo",
@@ -63,8 +62,9 @@ export const chat = (req, res) => {
             ...conversationHistory, // Include conversation history in messages
             {
                 role: "assistant",
-                content: responses
-            }
+                content: responses 
+            },
+  
         ],
         temperature: 0.7
     };

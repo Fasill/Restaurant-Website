@@ -1,5 +1,5 @@
 import express from 'express';
-import router from './routers/chatbotRouter.js';
+import router from './router/chatbotRouter.js';
 import cors from 'cors';
 const app = express();
 

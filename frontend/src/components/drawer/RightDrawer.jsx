@@ -7,60 +7,115 @@ import style from './chat.module.css';
 import { updateRight } from '../../store/StateStore.jsx';
 import SendIcon from '@mui/icons-material/Send';
 import goldenFlower from '../../assets/images/goldenFlower.png';
+import CloseIcon from '@mui/icons-material/Close';
 
-import {Backedlink} from '../../utils/Backendlink.jsx';
+import { Backedlink } from '../../utils/Backendlink.jsx';
 
 export default function RightDrawer() {
   const [userMessage, setUserMessage] = useState('');
   const [botMessages, setBotMessages] = useState([]);
-  const [isLoading,setIsLoading] = useState(false); 
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [isfirst,setIsfirst] = useState(false)
   const right = useSelector(state => state.right);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log(right, "right");
-  }, [right]);
+
 
   const handleHamburgerClick = () => {
-    console.log("hello");
     dispatch(updateRight(false));
   }
-
   const handleSendClick = async () => {
-    setIsLoading(true)
-    if (userMessage.trim() !== '') {
-      // Add user message to the chat UI
-      setBotMessages(prevMessages => [...prevMessages, { sender: 'user', message: userMessage }]);
-      
-      // Send user message to the server or API
-      try {
-        console.log("sending")
-        const response = await axios.post(Backedlink, { "prompt": userMessage });
-        console.log("reciveng")
-        console.log(response.message)
-        const botResponse = response.data.message; 
-     
-        setBotMessages(prevMessages => [...prevMessages, { sender: 'bot', message: botResponse }]);
-      } catch (error) {
-        console.error('Error sending message:', error);
-      }
-
+    if (!isLoading && userMessage.trim() !== '') {
+      await sendMessage(userMessage);
       setUserMessage('');
-    }
-    setIsLoading(false)
+  
 
+    }
   }
+  
+  useEffect(()=>{
+
+    const fetchData = async () => {
+      if (right && !isfirst) { // Changed & to &&
+        setIsfirst(true);
+        setIsLoading(true);
+  
+        try {
+          const response = await axios.post(Backedlink, { prompt: "give me a 1 line greeting as a grilli resturant chat bot and your name is chefbot note: make it short and if they askyou your name answer grillis restoerant chefbot and dont ever say 'I apologize for the lengthy response earlier. Here's a concise greeting:'" });
+          const botResponse = response.data.message;
+  
+          setBotMessages(prevMessages => [...prevMessages, { sender: 'bot', message: botResponse }]);
+          setTimeout(() => {
+            const playgroundDiv = document.querySelector(`.${style.playground}`);
+            if (playgroundDiv) {
+              playgroundDiv.scrollTop = playgroundDiv.scrollHeight;
+            }
+          }, 4); // Adjust the delay time as needed
+        } catch (error) {
+          console.error('Error sending message:', error);
+          // Handle error gracefully, e.g., display a message to the user
+        }
+  
+        setIsLoading(false);
+      }
+    };
+  
+    fetchData();
+  },[right])
+  
+    
+
+  const sendMessage = async (message) => {
+    setIsLoading(true)
+    // Add user message to the chat UI
+    setBotMessages(prevMessages => [...prevMessages, { sender: 'user', message }]);
+
+    // Send user message to the server or API
+    try {
+      const response = await axios.post(Backedlink, { "prompt": message });
+      console.log(response.message)
+      const botResponse = response.data.message;
+
+      setBotMessages(prevMessages => [...prevMessages, { sender: 'bot', message: botResponse }]);
+      setTimeout(() => {
+        const playgroundDiv = document.querySelector(`.${style.playground}`);
+        if (playgroundDiv) {
+          playgroundDiv.scrollTop = playgroundDiv.scrollHeight;
+        }
+      }, 4); // Adjust the delay time as needed
+  
+  
+    } catch (error) {
+      console.error('Error sending message:', error);
+    }
+
+    setUserMessage('');
+    setIsLoading(false)
+ 
+  }
+
+  const handleKeyPress = (e) => {
+    if (!isLoading  & e.key === 'Enter') {
+      handleSendClick();
+    }
+  };
 
   return (
     <div>
       <Drawer anchor="right" open={right} onClose={handleHamburgerClick}>
         <div className={style.wrapper}>
           <div className={style.chatContainer}>
-            <div className={style.flower}>
-              <img className={style.img1} src={goldenFlower} alt="Golden Flower" />
+            <div className={style.titlewraper}>
+
+            <div className={style.avatar}>CB</div>
+            <div className={style.header}>ChefBot</div>
+            <div className={style.close} >
+
+              <div onClick={handleHamburgerClick}>
+                <CloseIcon className = {style.closeIcon } sx={{fontSize: '18px' }} />
+              </div>
             </div>
-            <div className={style.header}>Chat Bot</div>
+            </div>
 
             <div className={style.playground}>
               {botMessages.map((msg, index) => (
@@ -71,8 +126,8 @@ export default function RightDrawer() {
             </div>
 
             <div className={style.inputWrapper}>
-              <input type='text' value={userMessage} onChange={e => setUserMessage(e.target.value)} />
-              <div className={style.sendButton} onClick={handleSendClick}>
+              <input type='text' value={userMessage} onChange={e => setUserMessage(e.target.value)} onKeyPress={handleKeyPress} />
+              <div className={style.sendButton} onClick={handleSendClick} disabled = {!isLoading}> 
                 <SendIcon />
               </div>
             </div>
