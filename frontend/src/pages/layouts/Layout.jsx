@@ -9,6 +9,7 @@ import RightDrawer from '../../components/drawer/RightDrawer.jsx';
 import { useDispatch } from 'react-redux';
 import { updateRight } from '../../store/StateStore.jsx';
 import TopNotch from '../ TopNotch/ TopNotch.jsx';
+import Home from '../home/Home.jsx'
 
 const layout = () => {
 
@@ -41,9 +42,13 @@ useEffect(() => {
   return (
     <body className={`${style.layout}`}> 
         <Toolbar />
-      <div className={``}>
-        <Outlet/>
-        <TopNotch/>
+      <div className={style.pages}>
+        <div className = {style.homepage}>
+          <Home/>
+        </div>
+        <div className = {style.TopNotch}>
+          <TopNotch/>
+        </div>
         {/* <Outlet/> */}
         <Drawer/>
         <RightDrawer/>

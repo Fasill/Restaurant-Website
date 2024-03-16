@@ -1,4 +1,3 @@
-import Home from './pages/home/Home.jsx'
 import './App.css'
 
 import Layout from './pages/layouts/Layout.jsx';
@@ -11,7 +10,7 @@ function App() {
         <Routes>
 
           <Route path="/" element={<Layout/>} >
-            <Route path="/" element={<Home/>}/>
+         
           </Route>
           
 

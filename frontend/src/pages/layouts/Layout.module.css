@@ -1,3 +1,4 @@
+
 .layout{
     position: relative;
     overflow-x: clip;
@@ -15,6 +16,17 @@ body::-webkit-scrollbar-thumb{
 body::-webkit-scrollbar-track{
     background-color:var(--eerie-black-3);
 
+}
+.pages{
+    /* background-color:; */
+    display: grid;
+    /* height: 100%; */
+}
+.homepage{
+    height: 120lvh;
+}
+.TopNotch{
+    /* height: 20%; */
 }
 .chatBot{
     position: absolute;

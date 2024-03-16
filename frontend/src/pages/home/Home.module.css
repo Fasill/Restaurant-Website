@@ -1,6 +1,6 @@
 @import url("../../index.css");
 
-.all{
+.homepage{
     height: 100lvh;
     width: 100%;
     display: flex;
@@ -21,7 +21,7 @@
     align-items:center;
     justify-content: space-between;
     overflow: clip;
-    background-color:red;
+    /* background-color:red; */
     /* background-image: url('../../assets/images/hero-slider-1.jpg'); */
     background-size: cover;
     background-position:center;
@@ -36,7 +36,7 @@
     background-color:var(--gold-crayola);
     width:  6rem;
     height: 6rem;
-    bottom:33rem;
+    bottom:45rem;
     right : 4rem;
     
 }
@@ -74,10 +74,8 @@
     /* filter: grayscale(100%); */
     filter: sepia(100%) brightness(0.4);
     width: 4rem;
-
 }
-  
- 
+
 .leftNext,.rightNext{
     height:2.4rem;
     width: 2.4rem;
@@ -130,10 +128,7 @@
     font-weight: bold;
     font-size: 12px;
     font-size:clamp( 9px ,3vw, 15px);
-
     animation: fadeInUp 0.8s ease forwards;
-
-
 }
 .hidden{
     display: none;
@@ -201,12 +196,6 @@
     animation: fadeInUp 3s ease forwards;
 
 }
-@media screen and (max-width: 556px) {
-    .btn{
-        display: none;
-    }
-    
-}
 
 .btn:hover>p{
     z-index: 1;
@@ -243,4 +232,13 @@
     border-bottom-right-radius:0% ;
 
 
+}
+
+@media screen and (max-width: 556px) {
+    .btn, .leftNext, .rightNext{
+        display: none;
+    }
+    .hero{
+        margin-top: 4rem;
+    }
 }

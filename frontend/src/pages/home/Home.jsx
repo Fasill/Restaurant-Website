@@ -35,7 +35,7 @@ const Home = () => {
   }, []);
 
   return (
-    <body className={`${style.all}`}>
+    <body className={`${style.homepage}`}>
       <div className={style.container} style={{ backgroundImage: `url(${images[idx]})`}}>
 
           <div className={style.leftNext} onClick={handleChangeLeft}>
