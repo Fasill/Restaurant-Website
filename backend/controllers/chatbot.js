@@ -1,6 +1,8 @@
 import axios from 'axios'; 
+import dotenv from 'dotenv';
+dotenv.config();
 
-const OPENAI_API_KEY = "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";
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 let conversationHistory = [];
 const responses = Object.values({
@@ -52,8 +54,6 @@ export const chat = (req, res) => {
 
     // Append user prompt to conversation history
     conversationHistory.push({ role: "user", content: prompt });
-
-
 
     const requestBody = {
         model: "gpt-3.5-turbo",
