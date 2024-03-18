@@ -1,6 +1,48 @@
+.pageWrapper{
+    position: relative;
+    width: 100vw;
+    display: flex;
+    /* align-items:center; */
+    justify-content: space-between;
+}
+.shape1{
+    z-index: 3;
+    height: 125lvh;
+    /* display: flex; */
+    position: relative;
+}
+.shape2{
+    z-index: 3;
+    
+}
+.shapes1{
+    position: absolute;
+    width: 15rem;
+    bottom:0;
+    animation: shake 4s ease infinite alternate;
+
+
+}
+
+.shapes2{
+    width: 20rem;
+    animation: shake 4s ease infinite alternate;
+}
+
+@keyframes shake {
+    from {
+      transform: translateY(45px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
 .TopNotchWrapper {
-    letter-spacing: 0.1em;
+
+    position: absolute;
     background-color: var(--smoky-black-1);
+
+    letter-spacing: 0.1em;
     width: 100vw;
     display: flex;
     gap: 1rem;
@@ -9,6 +51,8 @@
     align-items: center;
     padding-top: 4rem;
     padding-bottom: 4rem;
+    top:0;
+    right: 0;
 }
 
 .cardwrapper {
@@ -20,6 +64,7 @@
 
     width: 26rem;
     gap: 2rem;
+    z-index: 4;
     /* background-color:green; */
 }
 
