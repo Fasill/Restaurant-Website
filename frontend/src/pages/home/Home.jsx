@@ -1,4 +1,5 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+// import React,{useState,useEffect} from 'react';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import style from './Home.module.css';
@@ -7,11 +8,10 @@ import img1 from '../../assets/images/hero-slider-1.jpg';
 import img2 from '../../assets/images/hero-slider-2.jpg';
 import img3 from '../../assets/images/hero-slider-3.jpg';
 import badge from '../../assets/images/features-icon-2.png';
-
 const Home = () => {
   const [idx,setIdx] = useState(0);
   let images = [img1,img2,img3]
-  
+  const containerRef = useRef(null);
   const handleChangeLeft = () => {
     setIdx((idx - 1 + 3) % 3);
     updateTimestamp();
@@ -34,10 +34,35 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const lazyImage = entry.target;
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.src})`;
+          observer.unobserve(lazyImage);
+        }
+      });
+    });
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, [idx]);
   return (
     <body className={`${style.homepage}`}>
-      <div className={style.container} style={{ backgroundImage: `url(${images[idx]})`}}>
-
+    <div
+        ref={containerRef}
+        className={style.container}
+        style={{ backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center'}}
+        data-src={images[idx]}
+      >
           <div className={style.leftNext} onClick={handleChangeLeft}>
             <ArrowBackIosIcon className={style.leftArrow}/>
           </div>
