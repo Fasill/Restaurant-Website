@@ -163,6 +163,7 @@ div::-webkit-scrollbar-track{
     font-family: var(--fontFamily-dm_sans);
     font-weight: 700;
 }
+
 .PhoneWrapper{
     display: flex;
     flex-direction: column;

@@ -342,7 +342,7 @@ nav ul li:nth-child(6):hover~.runner {
 
     }
 }
-
+frontend/src/components/toolbar/style.module.css
 .line1,.line2,.line3{
     background-color:var(--white);
     height: 3px;

@@ -1,14 +1,13 @@
 .pageWrapper{
     position: relative;
     width: 100vw;
+    height: auto;
     display: flex;
-    /* align-items:center; */
     justify-content: space-between;
 }
 .shape1{
     z-index: 3;
     height: 125lvh;
-    /* display: flex; */
     position: relative;
 }
 .shape2{
@@ -37,22 +36,24 @@
       transform: translateY(0);
     }
   }
+  
 .TopNotchWrapper {
 
-    position: absolute;
+    /* position: absolute; */
     background-color: var(--smoky-black-1);
 
     letter-spacing: 0.1em;
     width: 100vw;
+    /* height: 130lvh; */
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+
     top:0;
     right: 0;
+    overflow-y: hidden;
 }
 
 .cardwrapper {
@@ -66,6 +67,28 @@
     gap: 2rem;
     z-index: 4;
     /* background-color:green; */
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+@media screen and (max-width: 1115px) {
+    .cardwrapperleftandright {
+      display: none;
+    }
+    .TopNotchWrapper {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+   
+  }
+  @media screen and (max-width: 485px) {
+    .cardwrapper {
+        padding: 1rem;
+    }  
 }
 
 .bottomtitle {

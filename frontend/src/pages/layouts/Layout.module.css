@@ -1,3 +1,4 @@
+@import url("../../index.css");
 
 .layout{
     position: relative;
@@ -19,14 +20,19 @@ body::-webkit-scrollbar-track{
 }
 .pages{
     /* background-color:; */
-    display: grid;
+    /* display: grid; */
     /* height: 100%; */
 }
 .homepage{
     height: 120lvh;
 }
+.story{
+    height: 100lvh;
+}
 .TopNotch{
     /* height: 20%; */
+    height: auto;
+
 }
 .chatBot{
     position: absolute;

@@ -235,7 +235,7 @@
 }
 
 @media screen and (max-width: 556px) {
-    .btn, .leftNext, .rightNext, .badge{
+     .leftNext, .rightNext, .badge{
         display: none;
     }
     .hero{

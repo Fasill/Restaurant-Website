@@ -7,18 +7,24 @@ import shape1 from "../../assets/images/shape-1.png";
 import shape2 from "../../assets/images/shape-2.png";
 import serviceBack from "../../assets/images/img-pattern.svg"
 import separator from '../../assets/images/separator.svg';
+import { useRef, useState, useEffect } from 'react';
+
 
 const  TopNotch = () => {
+
+
   return (
     <div className={style.pageWrapper}>
+{/* 
       <div className={style.shape1}>
         <img src={shape1} className={style.shapes1}/>
       </div>
       <div className={style.shape2}>
         <img src={shape2} className={style.shapes2}/>
       </div>
-      <div className={style.TopNotchWrapper}>
-        <div className={style.cardwrapper}>
+        */}
+      <div className={style.TopNotchWrapper}  >
+        <div className={`${style.cardwrapper} ${style.cardwrapperleftandright}`} >
           <div className = {style.cards}>
             <div className={style.imgwrapper}>
               <img src = {service1} className={style.service}/>
@@ -58,7 +64,7 @@ const  TopNotch = () => {
           </div>
         </div>
 
-        <div className={style.cardwrapper}>
+        <div className={`${style.cardwrapper} ${style.cardwrapperleftandright}`}>
             
           <div className = {style.cards}>
             <div className={style.imgwrapper}>

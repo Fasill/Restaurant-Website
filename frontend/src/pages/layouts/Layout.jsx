@@ -9,7 +9,8 @@ import RightDrawer from '../../components/drawer/RightDrawer.jsx';
 import { useDispatch } from 'react-redux';
 import { updateRight } from '../../store/StateStore.jsx';
 import TopNotch from '../ TopNotch/ TopNotch.jsx';
-import Home from '../home/Home.jsx'
+import Home from '../home/Home.jsx';
+import Story from '../story/Story.jsx'
 
 const layout = () => {
 
@@ -49,7 +50,8 @@ useEffect(() => {
         <div className = {style.TopNotch}>
           <TopNotch/>
         </div>
-        {/* <Outlet/> */}
+        <Story/>
+        
         <Drawer/>
         <RightDrawer/>
         <div className={`${style.chatBot} ${isShaking?style.shake:''}`} onClick={handleChatBot}>
