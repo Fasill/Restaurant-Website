@@ -11,6 +11,8 @@ import { updateRight } from '../../store/StateStore.jsx';
 import TopNotch from '../ TopNotch/ TopNotch.jsx';
 import Home from '../home/Home.jsx';
 import Story from '../story/Story.jsx'
+import SpecialDishes from '../../pages/specialDiches/SpecialDishes.jsx'
+import Menu from '../menu/Menu.jsx';
 
 const layout = () => {
 
@@ -50,7 +52,10 @@ useEffect(() => {
         <div className = {style.TopNotch}>
           <TopNotch/>
         </div>
+
         <Story/>
+        <SpecialDishes/>
+        <Menu/>
         
         <Drawer/>
         <RightDrawer/>

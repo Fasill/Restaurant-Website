@@ -114,7 +114,7 @@ const Toolbar = () => {
                     <li className={`${style.navElements}`}>CONTACT</li>
                     <li className={`${style.wraper}`}>
 
-                    <div className={`${style.btn}`}><p>FIND A TABLE</p></div>
+                    <div className={`${style.mainbtn}`}><p>FIND A TABLE</p></div>
                     <div className={`${style.humberger}`} onClick={handleHamburgerClick}>
                       <div className={`${style.line1}`}></div>
                       <div className={`${style.line2}`}></div>

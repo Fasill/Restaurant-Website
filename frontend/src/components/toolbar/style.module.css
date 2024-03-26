@@ -36,6 +36,7 @@
     background-color:var(--black-alpha-15);
 }
 
+
 .scrolling{
     transform: translateY(-100%);
     transition: transform 500ms;
@@ -253,7 +254,7 @@ nav ul li:nth-child(6):hover~.runner {
     nav {
         display: flex;
         }
-    .btn {
+    .mainbtn {
         align-self: center;
         justify-self: center;
     }
@@ -262,7 +263,7 @@ nav ul li:nth-child(6):hover~.runner {
     }
 }
 
-.btn{
+.mainbtn{
     overflow: clip;
     display: flex;
     justify-content: center;
@@ -278,13 +279,13 @@ nav ul li:nth-child(6):hover~.runner {
     cursor:pointer;
 }
 @media screen and (max-width: 556px) {
-    .btn{
+    .mainbtn{
         display: none;
     }
     
 }
 
-.btn:hover>p{
+.mainbtn:hover>p{
     z-index: 1;
     transform: translateY(-100%);
     transform: translateY(0%);
@@ -294,9 +295,9 @@ nav ul li:nth-child(6):hover~.runner {
 }
 
 
-.btn::before {
+.mainbtn::before {
     content: "";
-    display: flex; /* Apply flex properties to the parent */
+    display: flex;
     justify-content: center;
     align-items: flex-end;
     position: absolute;
@@ -312,7 +313,7 @@ nav ul li:nth-child(6):hover~.runner {
 
 }
 
-.btn:hover::before { /* Correct the hover selector */
+.mainbtn:hover::before {
     height: 100%;
 
     border-bottom-left-radius:0% ;
@@ -342,7 +343,6 @@ nav ul li:nth-child(6):hover~.runner {
 
     }
 }
-frontend/src/components/toolbar/style.module.css
 .line1,.line2,.line3{
     background-color:var(--white);
     height: 3px;
