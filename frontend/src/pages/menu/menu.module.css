@@ -1,8 +1,172 @@
 @import url("../../index.css");
-.menuWrapper{
-    height: 100lvh;
-    width: 100lvw;
-    background-color:#161718;
 
+.menuWrapper{
+    background-color:#161718;
+    box-sizing: border-box;
+    padding: 5rem;
 }
 
+.menuProduct2{
+    
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+}
+.menuHeader{
+    
+}
+.menuList{
+    
+}
+
+.storyTittle{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+.storyTittle>h1{
+    color: var(--gold-crayola);
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 0;
+    font-size: clamp(9px, 4vw, 15px);
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+
+.storyTittle>h2{
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    max-width: 61lvw;
+    color: white;
+    font-family: var(--fontFamily-forum);
+    font-size: clamp(10px, 9vw, 46px);
+    margin: 0;
+    font-weight: 400;
+    animation: fadeInUp 1.3s ease forwards;
+    
+}
+.dishTittle>p{
+    color: var(--gold-crayola);
+    font-family: sans-serif;
+    font-size: clamp(10px, 9vw, 46px);
+    margin: 0;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.engridients>p{
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 61lvw;
+    color: rgb(170, 170, 170);
+    font-family: var(--fontFamily-forum);
+    font-size: clamp(4px, 6vw, 14px);
+    margin: 0;
+    font-weight: 400;
+    animation: fadeInUp 1.3s ease forwards;
+}
+.storyTittle>img{
+    width: 10rem;
+    margin: 0;
+}
+.menuList{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.leftMenu{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:2rem;
+    padding: 1rem;
+    border-right: 1px rgb(51, 51, 51) solid;
+}
+.rightMenu{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:2rem;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 1115px) {
+    .rightMenu{
+        display: None;
+    }
+    .leftMenu{
+        border:none;
+    }
+    .menuWrapper{
+        padding: 3rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .menuWrapper{
+        padding: 2rem;
+    }
+}
+.menuProduct{
+    display: flex;
+    align-items:center;
+    height: 33.3%;
+    gap:1rem;
+    box-sizing:border-box;
+}
+.dishDescription{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+    gap:1rem;
+
+}
+.dishTittle{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    width: 100%;
+}
+.dish{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+.dishTittle>h1{
+    width: 100%;
+    max-width: 61lvw;
+    color: white;
+    font-family: var(--fontFamily-forum);
+    font-size: clamp(4px, 9vw, 20px);
+    margin: 0;
+    font-weight: 400;
+    animation: fadeInUp 1.3s ease forwards;
+}
+.dishTittle>p{
+    color: var(--gold-crayola);
+    font-family: sans-serif;
+    font-size: clamp(4px, 9vw, 20px);
+    margin: 0;
+    text-align: center;
+    letter-spacing: 2px;
+    width: 60%;
+    text-align: right;
+}
+.dash{
+    border-top:1px var(--gold-crayola) solid;
+    border-bottom:1px var(--gold-crayola) solid;
+    height: 4px;
+    width: 100%;
+}
