@@ -4,7 +4,8 @@ export const StateStore = createSlice({
   name: 'state',
   initialState: { 
     value: false,
-    right: false // Adding another boolean value called "right"
+    right: false,
+    page: "Home"
   },
   reducers: {
     info: (state, action) => {
@@ -13,9 +14,14 @@ export const StateStore = createSlice({
     
     updateRight: (state, action) => {
       state.right = action.payload;
+    },
+
+    updatePage:(state,action) =>{
+      state.page = action.payload;
     }
+    
   },
 });
 
-export const { info, updateRight } = StateStore.actions; // Including the new action "updateRight"
+export const { info, updateRight,updatePage } = StateStore.actions; 
 export default StateStore.reducer;

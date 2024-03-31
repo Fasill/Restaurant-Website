@@ -8,7 +8,7 @@
     justify-content: center;
     display: relative;
 }
-.container{
+.container1{
     padding: 4rem;
     display: relative;
     left: 0;
@@ -22,7 +22,15 @@
     overflow: clip;
     transition: background-image 2s ease;
 }
-.badge{
+.container1 > div:nth-child(2) {
+    /* background-color:red; */
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 100%;
+    
+}
+.badge1{
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -31,10 +39,11 @@
     background-color:var(--gold-crayola);
     width:  6rem;
     height: 6rem;
-    bottom: 60rem;
+    /* bottom: 60rem; */
     right : 4rem;
+    bottom:254rem;
 }
-.badge::before{
+.badge1::before{
     content: ''; 
     position: absolute;
     width:100%;
@@ -51,7 +60,7 @@
         transform: rotate(360deg);
     }
 }
-.badge>p{
+.badge1>p{
     font-family: sans-serif; 
     font-weight: 700;
     font-size: 0.85rem;
@@ -60,7 +69,7 @@
     margin: 0;
     color:rgb(68, 67, 67);
 }
-.badge>img{
+.badge1>img{
     filter: sepia(100%) brightness(0.4);
     width: 4rem;
 }
@@ -195,7 +204,7 @@
 }
 
 @media screen and (max-width: 556px) {
-     .leftNext, .rightNext, .badge{
+     .leftNext, .rightNext, .badge1{
         display: none;
     }
     .hero{

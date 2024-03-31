@@ -1,0 +1,247 @@
+.footerWrapper1 {
+    height: 150lvh;
+    background-image: url('../../assets/images/footer-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.footerWrapper1 > p {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: rgb(145, 145, 145);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.5s ease;
+}
+
+.footerWrapper1 > p > span > a {
+    color: var(--gold-crayola);
+}
+
+.footerWrapper1 > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.leftNavbarEg,
+.rightAds {
+    height: 100lvh;
+    display: flex;
+    align-items: center;
+}
+
+.leftNavbarEg > ul,
+.rightAds > ul {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.leftNavbarEg > ul > li,
+.rightAds > ul > li {
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: rgb(145, 145, 145);
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: color 0.5s ease;
+    letter-spacing: 4px;
+}
+
+.leftNavbarEg > ul > li:hover,
+.rightAds > ul > li > a:hover {
+    color: var(--gold-crayola);
+}
+
+.subscription {
+    background-image: url('../../assets/images/footer-form-bg.png');
+    display: flex;
+    height: 100lvh;
+}
+
+.subscription > img {
+    width: 1rem;
+}
+
+.mehal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem;
+}
+
+.contactAndSubsicription {
+    font-family: sans-serif;
+    color: rgb(145, 145, 145);
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contactAndSubsicription > p {
+    margin: 0;
+}
+
+.mehal > img {
+    width: 10rem;
+    margin: 0;
+}
+
+.mehal > h1 {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    max-width: 61lvw;
+    color: white;
+    font-family: var(--fontFamily-forum);
+    font-size: clamp(10px, 9vw, 46px);
+    margin: 0;
+    font-weight: 400;
+}
+
+.transition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.subInputs {
+    background-color: #181819;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid #181819;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    gap: 0.5rem;
+    height: 2rem;
+    width: 30rem;
+}
+
+.subInputs > input {
+    height: 100%;
+    border: none;
+    background-color: #181819;
+    outline: none;
+    background: none;
+    caret-color: white;
+    color: white;
+    width: 100%;
+}
+
+.subInputs:focus-within {
+    border: 1px solid var(--gold-crayola);
+}
+
+.box {
+    height: 0.5rem;
+    width: 0.5rem;
+    border: 1px solid var(--gold-crayola);
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.btn {
+    overflow: clip;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 0.7rem;
+    font-weight: bold;
+    width: 100%;
+    max-width: 30%;
+    background-color: var(--gold-crayola);
+    position: relative;
+    border: 1px solid var(--gold-crayola);
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 0.4rem;
+}
+
+.btn:hover > p {
+    z-index: 1;
+    transform: translateY(-100%);
+    transform: translateY(0%);
+    transition: 0.5s;
+    color: var(--gold-crayola);
+}
+
+.btn::before {
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    color: white;
+    left: 0;
+    top: 0;
+    background-color: black;
+    width: 100%;
+    height: 0%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    transition: 0.2s;
+}
+
+.btn:hover::before {
+    height: 100%;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
+
+@media screen and (max-width: 1115px) {
+    .leftNavbarEg,
+    .rightAds {
+        display: none;
+    }
+    .subInputs {
+        width: 20rem;
+    }
+}
+
+.rightAds > ul > li > a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: rgb(145, 145, 145);
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: color 0.5s ease;
+    letter-spacing: 4px;
+}

@@ -21,60 +21,47 @@
 .flower > img {
     width: 10rem;
     opacity: 0.09;
-    animation: rotateAnimation 70s infinite linear; /* Apply animation */
+    animation: rotateAnimation 70s infinite linear;
 }
 @keyframes rotateAnimation {
     from {
-        transform: rotate(0deg); /* Start rotation from 0 degrees */
+        transform: rotate(0deg);
     }
     to {
-        transform: rotate(360deg); /* Rotate 360 degrees */
+        transform: rotate(360deg);
     }
 }
-
-
 .header{
-    /* background-color:green; */
     height: 10lv;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: var(--fontFamily-forum);
-
     font-size: 28px;
     color:white;
     padding: 1rem;
 }
 .playground{
     border-top:1px solid rgb(59, 59, 59);
-
-    /* background-color:green; */
     height: 100lvh;
-    /* border-radius:0.5rem; */
     position: relative;
     padding: 0.5rem;
     padding-bottom: 8rem;
-
     display: flex;
     gap:0.4rem;
     flex-direction: column;
     overflow-y: scroll;
     overflow-x: clip;
-
-    /* padding-bottom: 5rem; */
 }
 .inputWrapper{
     position: absolute;
     bottom: 2rem;
     width: 80%;
     align-self: center;
-    /* background-color: aqua; */
     display: flex;
     gap:1rem;
     align-items: center;
     justify-content:center;
-
-
 }
 .inputWrapper > SendIcon{
     color: rgb(150, 150, 150) ;
@@ -84,16 +71,12 @@
     align-items: center;
     justify-content:center;
     cursor:pointer;
-    /* background-color:red; */
     height: 100%;
     height: 2rem;
     border:1px solid rgb(150, 150, 150);
-
     border-radius:0.4rem;
-    /* box-sizing:border-box; */
     padding-left: 0.4rem;
     padding-right: 0.4rem;
-
 }
 .sendButton:hover{
     background-color:rgb(49, 49, 49);
@@ -103,59 +86,42 @@
     background-color:var(--eerie-black-3);
     height: 2rem;
     width: 100%;
-
     border:1px solid rgb(150, 150, 150);
-
     border-radius:0.4rem;
     color:white; 
     padding-left: 0.5rem;
     font-size: 0.9rem;
-
 }
 .botWrapper{
     margin:0.5rem;
     border:1px solid rgb(83, 83, 83);
     background-color:rgb(49, 50, 51);
-    
     display: flex;
     max-width: 90%;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
-    /* min-height:12rem; */
     border-radius:0.4rem;
     padding:0.3rem;
     box-shadow: 1px 1px 10px 1px rgb(53, 53, 53);
-
-
 }
 .userWrapper{
     border:1px solid rgb(83, 83, 83);
-    
     align-self:flex-end;
     background-color:rgb(32, 28, 31);
-
     display: flex;
     max-width: 90%;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
-    /* min-height:12rem; */
     border-radius:0.4rem;
     padding:0.3rem;
     box-shadow: 1px 1px 10px 1px rgb(53, 53, 53);
     overflow: auto;
     min-height: 1rem;
-
 }
-
-
 .titlewraper{
-    /* background-color:green; */
-    /* background-color:red; */
     display: flex;
     align-items:center;
     width: 100%;
-    /* justify-content: center; */
-
 }
 .avatar{
     background-color:rgb(126, 123, 107);
@@ -163,11 +129,8 @@
     border-radius:100%;
     font-size: 18px;
 }
-
 .close{
     width: 100%;
-    
-    /* background-color:red; */
     padding-right: 2rem;
     box-sizing: border-box;
     display: flex;
@@ -175,8 +138,6 @@
     align-items: center;
     height: 110lvh;
     max-height: 15lvh;
-
-
 }
 .close > div{
     display: flex;
@@ -188,21 +149,17 @@
     border: 1px solid rgb(180, 179, 179);
     cursor: pointer;
 }
-
 .close > div:hover {
     border: 1px solid var(--gold-crayola);
     transition: border 0.25s;
-
 }
 .closeIcon{
     border-radius: 100%;
     padding: 6px;
     font-size: 4px;
     color:rgb(180, 179, 179);
-
 }
 .closeIcon:hover{
-
     color: var(--gold-crayola);
     transition: color 0.25s;
 }

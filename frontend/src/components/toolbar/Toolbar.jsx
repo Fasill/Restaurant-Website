@@ -1,14 +1,15 @@
 import React from 'react';
 import { FaMapMarkerAlt, FaClock, FaPhone, FaEnvelope } from 'react-icons/fa';
 import style from './style.module.css';
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 import logo from '../../assets/images/logo.svg';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { info } from '../../store/StateStore.jsx';
+import { updatePage } from '../../store/StateStore.jsx';
 
 const Toolbar = () => {
- 
+
     const [showNavbar, setShowNavbar] = useState(true);
 
     useEffect(() => {
@@ -23,7 +24,6 @@ const Toolbar = () => {
       };
     }, []);
 
-    // ==========================================================
     const [scrollDirection, setScrollDirection] = useState();
 
     useEffect(() => {
@@ -47,20 +47,29 @@ const Toolbar = () => {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
-    // ===============================================================
-    //=============================================================
+
     const dispatch = useDispatch();
 
-    const handleHamburgerClick = ()=>{
+    const handleHamburgerClick = () => {
       dispatch(info(true));
     }
 
- 
-
-    //==============================================================
+    const handleNavButtons = (val) => {
+      if (val === "menu") {
+        dispatch(updatePage("menu"))
+      } else if (val === "aboutus") {
+        dispatch(updatePage("aboutus"))
+      } else if (val === "ourchefs") {
+        dispatch(updatePage("ourchefs"))
+      } else if (val === "contact") {
+        dispatch(updatePage("contact"))
+      } else {
+        dispatch(updatePage("Home"))
+      }
+    }
   
   return (
-    <div   className={`${style.all} ${!showNavbar?style.hidden:""} ${scrollDirection? style.scrolling : ""}`}>
+    <div   className={`${style.all} ${!showNavbar ? style.hidden : ""} ${scrollDirection ? style.scrolling : ""}`}>
 
         <div  className={`${style.toolbar}`}>
             <div  className={`${style.container}`}>
@@ -99,7 +108,7 @@ const Toolbar = () => {
             </div>
         </div>
 
-        <div  className={`${style.navbar} ${!showNavbar ?style.scrolled: ""}`}>
+        <div  className={`${style.navbar} ${!showNavbar ? style.scrolled : ""}`}>
           <div className={`${style.logo}`}>
               <img src={logo} alt="" className="img" />
           </div>
@@ -108,10 +117,10 @@ const Toolbar = () => {
                     
                     <li className={`${style.navElements2}`}></li>
                     <li className={`${style.navElements}`}>HOME</li>
-                    <li className={`${style.navElements}`}>MENUS</li>
-                    <li className={`${style.navElements}`}>ABOUT US</li>
-                    <li className={`${style.navElements}`}>OUR CHEFS</li>
-                    <li className={`${style.navElements}`}>CONTACT</li>
+                    <li className={`${style.navElements}`} onClick={()=>handleNavButtons("menu")}>MENUS</li>
+                    <li className={`${style.navElements}`} onClick={()=>handleNavButtons("aboutus")}>ABOUT US</li>
+                    <li className={`${style.navElements}`} onClick={()=>handleNavButtons("ourchefs")}>OUR CHEFS</li>
+                    <li className={`${style.navElements}`} onClick={()=>handleNavButtons("contact")}>CONTACT</li>
                     <li className={`${style.wraper}`}>
 
                     <div className={`${style.mainbtn}`}><p>FIND A TABLE</p></div>
@@ -124,13 +133,9 @@ const Toolbar = () => {
                     </li>
                     <div className={`${style.runner}`}></div>
 
-
-
-
               </ul>
           </nav>
         </div>
-
 
     </div>
   );

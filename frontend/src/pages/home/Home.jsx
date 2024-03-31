@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-// import React,{useState,useEffect} from 'react';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import style from './Home.module.css';
@@ -8,10 +7,12 @@ import img1 from '../../assets/images/hero-slider-1.jpg';
 import img2 from '../../assets/images/hero-slider-2.jpg';
 import img3 from '../../assets/images/hero-slider-3.jpg';
 import badge from '../../assets/images/features-icon-2.png';
+
 const Home = () => {
   const [idx,setIdx] = useState(0);
   let images = [img1,img2,img3]
   const containerRef = useRef(null);
+
   const handleChangeLeft = () => {
     setIdx((idx - 1 + 3) % 3);
     updateTimestamp();
@@ -21,6 +22,7 @@ const Home = () => {
     setIdx((idx + 1) % 3);
     updateTimestamp();
   }; 
+
   const updateTimestamp = () => {
     setTimestamp(Date.now());
   };
@@ -55,19 +57,21 @@ const Home = () => {
       }
     };
   }, [idx]);
+
   return (
     <body className={`${style.homepage}`}>
-    <div
+      <div
         ref={containerRef}
-        className={style.container}
+        className={style.container1}
         style={{ backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center center'}}
         data-src={images[idx]}
       >
-          <div className={style.leftNext} onClick={handleChangeLeft}>
-            <ArrowBackIosIcon className={style.leftArrow}/>
-          </div>
+        <div className={style.leftNext} onClick={handleChangeLeft}>
+          <ArrowBackIosIcon className={style.leftArrow}/>
+        </div>
+        <div>
           <div className={style.hero}>
-            <p className={`${idx == 0 ? style.title1 : style.hidden}`}>TRADATIONAL & HYGINE</p>
+            <p className={`${idx == 0 ? style.title1 : style.hidden}`}>TRADITIONAL & HYGIENE</p>
             <p className={`${idx == 1 ? style.title1 : style.hidden}`}>DELIGHTFUL EXPERIENCE</p>
             <p className={`${idx == 2 ? style.title1 : style.hidden}`}>AMAZING & DELICIOUS</p>
 
@@ -100,19 +104,18 @@ const Home = () => {
             <div className={idx == 0 ? style.btn: style.hidden}><p>VIEW OUR MENU</p></div>
             <div className={idx == 1 ? style.btn: style.hidden}><p>VIEW OUR MENU</p></div>
             <div className={idx == 2 ? style.btn: style.hidden}><p>VIEW OUR MENU</p></div>
-
           </div>
-          <div className={style.rightNext} onClick={handleChangeRight}>
-            <ArrowForwardIosIcon className={style.rightArrow}/>
-          </div>
-          <div className={style.badge}>
-            <img src={badge} />
-            <p>Book A Table</p>
-          </div>
-
+        </div>
+        <div className={style.rightNext} onClick={handleChangeRight}>
+          <ArrowForwardIosIcon className={style.rightArrow}/>
+        </div>
+        <div className={style.badge1}>
+          <img src={badge} />
+          <p>Book A Table</p>
+        </div>
       </div>
     </body>
   )
 }
 
-export default Home
+export default Home;
