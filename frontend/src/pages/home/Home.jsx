@@ -33,6 +33,10 @@ const Home = () => {
       updateTimestamp();
     }, 5000);
 
+    images.forEach((image) => {
+      new Image().src = image;
+    });
+    
     return () => clearInterval(interval);
   }, []);
 
