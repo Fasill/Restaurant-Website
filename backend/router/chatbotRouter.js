@@ -1,12 +1,10 @@
-import express from 'express';
-import {chat} from '../controllers/chatbot.js'
-const router = express.Router()
+import express from "express";
+import { chat } from "../controllers/chatbot2.js";
+const router = express.Router();
 
+router.post("/chat", chat);
+router.get("/", (req, res) => {
+  res.json({ message: "hello" });
+});
 
-router.post("/chat",chat)
-router.get("/",(req,res)=>{
-    res.json({"message":"hello"})
-})
-
-
-export  default router
+export default router;
