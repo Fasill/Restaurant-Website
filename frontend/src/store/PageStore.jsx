@@ -1,8 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const PageStore = createSlice({
-  name: 'page',
-  initialState: { 
+  name: "page",
+  initialState: {
     currentPage: "page1",
   },
   reducers: {

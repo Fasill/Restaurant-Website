@@ -1,270 +1,264 @@
-.pageWrapper{
-    position: relative;
-    width: 100vw;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
+.pageWrapper {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
 }
-.shape1{
-    z-index: 3;
-    height: 125lvh;
-    position: relative;
+.shape1 {
+  z-index: 3;
+  height: 125lvh;
+  position: relative;
 }
-.shape2{
-    z-index: 3;
-    
+.shape2 {
+  z-index: 3;
 }
-.shapes1{
-    position: absolute;
-    width: 15rem;
-    bottom:0;
-    animation: shake 4s ease infinite alternate;
-
-
+.shapes1 {
+  position: absolute;
+  width: 15rem;
+  bottom: 0;
+  animation: shake 4s ease infinite alternate;
 }
 
-.shapes2{
-    width: 20rem;
-    animation: shake 4s ease infinite alternate;
+.shapes2 {
+  width: 20rem;
+  animation: shake 4s ease infinite alternate;
 }
 
 @keyframes shake {
-    from {
-      transform: translateY(45px);
-    }
-    to {
-      transform: translateY(0);
-    }
+  from {
+    transform: translateY(45px);
   }
-  
+  to {
+    transform: translateY(0);
+  }
+}
+
 .TopNotchWrapper {
+  /* position: absolute; */
+  background-color: var(--smoky-black-1);
 
-    /* position: absolute; */
-    background-color: var(--smoky-black-1);
+  letter-spacing: 0.1em;
+  width: 100vw;
+  /* height: 130lvh; */
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 
-    letter-spacing: 0.1em;
-    width: 100vw;
-    /* height: 130lvh; */
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-
-    top:0;
-    right: 0;
-    overflow-y: hidden;
+  top: 0;
+  right: 0;
+  overflow-y: hidden;
 }
 
 .cardwrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* width: 17.9rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* width: 17.9rem; */
 
-    width: 26rem;
-    gap: 2rem;
-    z-index: 4;
-    /* background-color:green; */
-    height: 100%;
-    box-sizing: border-box;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+  width: 26rem;
+  gap: 2rem;
+  z-index: 4;
+  /* background-color:green; */
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 @media screen and (max-width: 1115px) {
-    .cardwrapperleftandright {
-      display: none;
-    }
-    .TopNotchWrapper {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-   
+  .cardwrapperleftandright {
+    display: none;
   }
+  .TopNotchWrapper {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 485px) {
-    .cardwrapper {
-        padding: 1rem;
-    }  
+  .cardwrapper {
+    padding: 1rem;
+  }
 }
 
 .bottomtitle {
-    display: grid;
-    align-content: center;
-    justify-items: center;
-    gap: 0.5rem;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 0.5rem;
 }
 
 .bottomtitle > h1 {
-    color: white;
-    font-size: 32px;
-    font-weight: 400;
-    font-family: var(--fontFamily-forum);
-    font-size: clamp(10px, 3vw, 100px);
-    margin: 0;
+  color: white;
+  font-size: 32px;
+  font-weight: 400;
+  font-family: var(--fontFamily-forum);
+  font-size: clamp(10px, 3vw, 100px);
+  margin: 0;
 }
 
 .menuWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .PhoneNo {
-    color: var(--gold-crayola);
-    font-size: 30px;
-    margin: 0;
+  color: var(--gold-crayola);
+  font-size: 30px;
+  margin: 0;
 }
 
 .underline {
-    border-top: 1px solid var(--gold-crayola);
-    border-bottom: 1px solid var(--gold-crayola);
-    height: 3px;
-    width: 10%;
-    opacity: 0;
-    transition: width 0.5s, opacity 0.5s;
+  border-top: 1px solid var(--gold-crayola);
+  border-bottom: 1px solid var(--gold-crayola);
+  height: 3px;
+  width: 10%;
+  opacity: 0;
+  transition: width 0.5s, opacity 0.5s;
 }
 
 .menuWrapper > p {
-    letter-spacing: 0.12em;
+  letter-spacing: 0.12em;
 
-    color: var(--gold-crayola);
-    font-family: sans-serif;
-    font-size: clamp(9px, 3vw, 14px);
-    margin: 0;
-    text-align: center;
-    transition: color 0.5s ease;
+  color: var(--gold-crayola);
+  font-family: sans-serif;
+  font-size: clamp(9px, 3vw, 14px);
+  margin: 0;
+  text-align: center;
+  transition: color 0.5s ease;
 }
 
 .menuWrapper:hover > .underline {
-    width: 100%;
-    opacity: 1;
+  width: 100%;
+  opacity: 1;
 }
 
 .menuWrapper:hover > p {
-    color: white;
+  color: white;
 }
 
 .cards {
-    position: relative;
-    display: flex;
-    width: 17.9rem;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    cursor: pointer;
+  position: relative;
+  display: flex;
+  width: 17.9rem;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .cards::after {
-    opacity: 0;
-    content: "";
-    position: absolute;
-    background-color: white;
-    height: 1rem;
-    z-index: 1;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    height: 170%;
-    margin-top: -30rem;
-    rotate: 45deg;
-    transition: 1s ease;
-    box-shadow: 30px 1px 100px 20px rgb(255, 255, 255);
+  opacity: 0;
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 1rem;
+  z-index: 1;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  height: 170%;
+  margin-top: -30rem;
+  rotate: 45deg;
+  transition: 1s ease;
+  box-shadow: 30px 1px 100px 20px rgb(255, 255, 255);
 }
 
 .cards:hover::after {
-    margin-top: 20rem;
-    left: 9rem;
-    opacity: 1;
+  margin-top: 20rem;
+  left: 9rem;
+  opacity: 1;
 }
 
 .service {
-    z-index: 1;
-    transition: transform 0.3s ease;
-    transform-origin: center center;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
 }
 
 .cards:hover .service {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
 .imgwrapper {
-    position: absolute;
-    width: 18rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  position: absolute;
+  width: 18rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .serviceBack {
-    width: 9rem;
-    transition: transform 0.3s ease;
+  width: 9rem;
+  transition: transform 0.3s ease;
 }
 
 .cards:hover .serviceBack {
-    transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .middle {
-    /* background-color:blue; */
-    display: flex;
-    /* gap:1rem; */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-
+  /* background-color:blue; */
+  display: flex;
+  /* gap:1rem; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .midleheader {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .midleheader > img {
-    width: 8rem;
+  width: 8rem;
 }
 
 .midleheader h1:first-child {
-    color: var(--gold-crayola);
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 12px;
-    font-size: clamp(9px, 3vw, 15px);
-    animation: fadeInUp 0.8s ease forwards;
-    margin: 0;
-    text-align: center;
+  color: var(--gold-crayola);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  font-size: clamp(9px, 3vw, 15px);
+  animation: fadeInUp 0.8s ease forwards;
+  margin: 0;
+  text-align: center;
 }
 
 .midleheader h1:nth-child(3) {
-    text-align: center;
-    width: 100%;
-    max-width: 61lvw;
-    color: white;
-    /* background-color:green; */
-    font-family: var(--fontFamily-forum);
-    font-size: clamp(10px, 9vw, 46px);
-    /* font-size: 46px; */
-    margin: 0;
-    font-weight: 400;
-    animation: fadeInUp 1.3s ease forwards;
+  text-align: center;
+  width: 100%;
+  max-width: 61lvw;
+  color: white;
+  /* background-color:green; */
+  font-family: var(--fontFamily-forum);
+  font-size: clamp(10px, 9vw, 46px);
+  /* font-size: 46px; */
+  margin: 0;
+  font-weight: 400;
+  animation: fadeInUp 1.3s ease forwards;
 }
 
 .midleheader > p {
-    color: white;
-    font-family: sans-serif;
-    font-size: clamp(9px, 3vw, 15px);
-    animation: fadeInUp 0.8s ease forwards;
-    margin: 0;
-    text-align: center;
+  color: white;
+  font-family: sans-serif;
+  font-size: clamp(9px, 3vw, 15px);
+  animation: fadeInUp 0.8s ease forwards;
+  margin: 0;
+  text-align: center;
 }

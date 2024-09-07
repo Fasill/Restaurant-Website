@@ -1,213 +1,217 @@
 @import url("../../index.css");
 
-.homepage{
-    height: 100lvh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: relative;
+.homepage {
+  height: 100lvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: relative;
 }
-.container1{
-    padding: 4rem;
-    display: relative;
-    left: 0;
-    right:0;
-    width: 100%;
-    height: 130lvh;
-    background-size: cover;
-    display: flex;
-    align-items:center;
-    justify-content: space-between;
-    overflow: clip;
-    transition: background-image 2s ease;
+.container1 {
+  padding: 4rem;
+  display: relative;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 130lvh;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: clip;
+  transition: background-image 2s ease;
 }
 .container1 > div:nth-child(2) {
-    /* background-color:red; */
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    width: 100%;
-    
+  /* background-color:red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
-.badge1{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: center;
-    background-color:var(--gold-crayola);
-    width:  6rem;
-    height: 6rem;
-    /* bottom: 60rem; */
-    right : 4rem;
-    bottom:254rem;
+.badge1 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gold-crayola);
+  width: 6rem;
+  height: 6rem;
+  /* bottom: 60rem; */
+  right: 4rem;
+  bottom: 254rem;
 }
-.badge1::before{
-    content: ''; 
-    position: absolute;
-    width:100%;
-    height:100%;
-    border:1px solid var(--gold-crayola);
-    animation: rotateBadge 10s infinite linear;
+.badge1::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--gold-crayola);
+  animation: rotateBadge 10s infinite linear;
 }
 
 @keyframes rotateBadge {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-.badge1>p{
-    font-family: sans-serif; 
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-align: center;
-    width: 4rem;
-    margin: 0;
-    color:rgb(68, 67, 67);
+.badge1 > p {
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-align: center;
+  width: 4rem;
+  margin: 0;
+  color: rgb(68, 67, 67);
 }
-.badge1>img{
-    filter: sepia(100%) brightness(0.4);
-    width: 4rem;
-}
-
-.leftNext,.rightNext{
-    height:2.4rem;
-    width: 2.4rem;
-    border:1px solid var(--gold-crayola);
-    transform: rotate(45deg);
-    cursor:pointer;
-    transition: background-color 0.2s;
-    display: flex;
-    align-items:center;
-    justify-content: center;
+.badge1 > img {
+  filter: sepia(100%) brightness(0.4);
+  width: 4rem;
 }
 
-.leftNext:hover,.rightNext:hover{
-    background-color:var(--gold-crayola);
-
-}
-.leftArrow,.rightArrow{
-    transform: rotate(-45deg);
-    color:var(--gold-crayola);
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    font-size: 12px;
-}
-.leftNext:hover >.leftArrow,.rightNext:hover >.rightArrow{
-    color:black;
+.leftNext,
+.rightNext {
+  height: 2.4rem;
+  width: 2.4rem;
+  border: 1px solid var(--gold-crayola);
+  transform: rotate(45deg);
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.hero{
-    margin-top: 15rem;
-    gap:1rem;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content: center;
+.leftNext:hover,
+.rightNext:hover {
+  background-color: var(--gold-crayola);
 }
-.hero>img{
-    width: 100vh;
-    max-width: 10rem;
-    animation: fadeInUp 0.7s ease forwards;
+.leftArrow,
+.rightArrow {
+  transform: rotate(-45deg);
+  color: var(--gold-crayola);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
 }
-.title1{
-    color:var(--gold-crayola);
-    font-family: sans-serif; 
-    font-weight: bold;
-    font-size: 12px;
-    font-size:clamp( 9px ,3vw, 15px);
-    animation: fadeInUp 0.8s ease forwards;
+.leftNext:hover > .leftArrow,
+.rightNext:hover > .rightArrow {
+  color: black;
 }
-.hidden{
-    display: none;
+
+.hero {
+  margin-top: 15rem;
+  gap: 1rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.title2{
-    width:100%;
-    max-width:60lvw;
-    color:white;
-    font-family: var(--fontFamily-forum);
-    font-size:clamp( 25px ,9vw, 100px);
-    text-align: center;
-    margin: 0;
-    font-weight: 400;
-    animation: fadeInUp 1.3s ease forwards;
+.hero > img {
+  width: 100vh;
+  max-width: 10rem;
+  animation: fadeInUp 0.7s ease forwards;
 }
-.title3{
-    color:white;
-    font-family: var(--fontFamily-forum);
-    margin: 0;
-    font-size:clamp( 1px ,3.5vw, 20px);
-    animation: fadeInUp 1.6s ease forwards;
+.title1 {
+  color: var(--gold-crayola);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  font-size: clamp(9px, 3vw, 15px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+.hidden {
+  display: none;
+}
+.title2 {
+  width: 100%;
+  max-width: 60lvw;
+  color: white;
+  font-family: var(--fontFamily-forum);
+  font-size: clamp(25px, 9vw, 100px);
+  text-align: center;
+  margin: 0;
+  font-weight: 400;
+  animation: fadeInUp 1.3s ease forwards;
+}
+.title3 {
+  color: white;
+  font-family: var(--fontFamily-forum);
+  margin: 0;
+  font-size: clamp(1px, 3.5vw, 20px);
+  animation: fadeInUp 1.6s ease forwards;
 }
 
 @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(45px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.btn{
-    overflow: clip;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    width: 208px;
-    height: 58px;
-    position: relative;
-    border:2px solid var(--gold-crayola);
-    letter-spacing: 3px;
-    color:var(--gold-crayola);
-    cursor:pointer;
-    animation: fadeInUp 3s ease forwards;
+.btn {
+  overflow: clip;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 208px;
+  height: 58px;
+  position: relative;
+  border: 2px solid var(--gold-crayola);
+  letter-spacing: 3px;
+  color: var(--gold-crayola);
+  cursor: pointer;
+  animation: fadeInUp 3s ease forwards;
 }
 
-.btn:hover>p{
-    z-index: 1;
-    transform: translateY(-100%);
-    transform: translateY(0%);
-    transition: 0.5s;
-    color:black;
+.btn:hover > p {
+  z-index: 1;
+  transform: translateY(-100%);
+  transform: translateY(0%);
+  transition: 0.5s;
+  color: black;
 }
 
 .btn::before {
-    content: "";
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    position: absolute;
-    color: black;
-    left: 0;
-    top:0;
-    background-color:var(--gold-crayola);
-    width: 100%;
-    height: 0%;
-    border-bottom-left-radius:100%;
-    border-bottom-right-radius:100%;
-    transition: 0.2s;
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  color: black;
+  left: 0;
+  top: 0;
+  background-color: var(--gold-crayola);
+  width: 100%;
+  height: 0%;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  transition: 0.2s;
 }
 
 .btn:hover::before {
-    height: 100%;
-    border-bottom-left-radius:0%;
-    border-bottom-right-radius:0%;
+  height: 100%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
 }
 
 @media screen and (max-width: 556px) {
-     .leftNext, .rightNext, .badge1{
-        display: none;
-    }
-    .hero{
-        margin-top: 4rem;
-    }
+  .leftNext,
+  .rightNext,
+  .badge1 {
+    display: none;
+  }
+  .hero {
+    margin-top: 4rem;
+  }
 }

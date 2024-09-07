@@ -13,12 +13,7 @@ export default function LeftDrawer() {
   const value = useSelector(state => state.value);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log(value, "Value");
-  }, [value]);
-
   const handleHamburgerClick = () => {
-    console.log("hello");
     dispatch(info(false));
   }
 
